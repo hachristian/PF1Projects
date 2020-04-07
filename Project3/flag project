@@ -1,0 +1,151 @@
+/*
+ * project 3
+ * Julio sibrian
+ * Professor John Gauch
+ * Fall 2019
+ */
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main (){
+
+    // declare and initialize variables
+    int col = 0;
+    int row = 0;
+
+    // ask the user for input
+    cout << "Please enter the amount of columns you want. within (100-1000) ";
+    cin >> col;
+    while(col < 100 || col > 1000){
+        cout << "Incorrect range!" << endl << "Please enter the amount of columns you want. within (100-1000) ";
+        cin >> col;
+    }
+
+
+    
+    cout << "Now enter how many rows. within (100-1000) ";
+    cin >> row;
+      while(row < 100 || row > 1000){
+        cout << "Incorrect range!" << endl << "Please enter the amount of rows you want. within (100-1000) ";
+        cin >> row;
+    }
+
+        
+
+        
+    // making the country variables here so i can find them faster.
+    bool countryanswer = false;
+    string country;
+    bool Belgium = false;
+    bool Benin = false;
+    bool Colombia = false;
+    bool Denmark = false;
+    bool Madagascar = false;
+
+    cout << "Please pick one of the following country's." << endl <<
+            "Belgium, Benin, Colombia, Denmark, or Madagascar. ";
+    cin >> country;
+    // picking which flag you want
+    while(countryanswer != true){
+        if(country == "Belgium" || country == "belgium"){
+            Belgium = true;
+            countryanswer = true;
+        }
+        else if(country == "Benin" || country == "benin"){
+            Benin = true;
+            countryanswer = true;
+        }
+        else if(country == "Colombia" || country == "colombia"){
+            Colombia = true;
+            countryanswer = true;
+        }
+        else if(country == "Denmark" || country == "denmark"){
+            Denmark = true;
+            countryanswer = true;
+        }
+        else if(country == "Madagascar" || country == "madagascar"){
+            Madagascar = true;
+            countryanswer = true;
+        }
+        else {
+            cout << "Please enter a supported country! ";
+            cin >> country;
+            countryanswer = false;
+        }
+    }
+    // for loops for the rows and columns
+    cout << "P3" << endl;
+    cout << col << " " << row << endl;
+    cout <<"255" << endl;
+
+    // make Belgium flag
+    if(Belgium == true){
+        for(int x = 0; x < row; x++){
+            for(int y = 0; y < col; y++){
+                if(y < col /3){
+                    cout << "0 0 0 ";
+                }
+                else if(y < 2 * col / 3){
+                    cout << "255 179 0 ";
+                }
+                else{
+                    cout << "255 26 0 ";
+                }
+           
+            }
+            cout << endl;
+        }
+    }
+    // make Benin flag
+    
+     if(Benin == true){
+        for(int x = 0; x < row; x++){
+            for(int y = 0; y < col; y++){
+                for(int y = 0; y < col /3; y++){
+                    cout << "0 0 0";
+                }
+                for(int y = 0; y < 2 *col /3; y++ ){
+                    cout << "255 179 0";
+                }
+                cout << "255 26 0";
+                    
+            }
+            cout << endl;
+        }
+     }
+    // make Colombia flag
+    if(Colombia == true){
+        for(int x = 0; x < row; x++){
+            for(int y = 0; y < col; y++){
+            }
+            cout << endl;
+        }
+     }
+    // make Denmark flag
+    if(Denmark == true){
+        for(int x = 0; x < col; x++){
+            for(int y = 0; y < row; y++){
+            }
+            cout << endl;
+        }
+     }
+    // make Madagascar flag
+    if(Madagascar == true){
+        for(int x = 0; x < col; x++){
+            for(int y = 0; y < row; y++){
+            }
+            cout << endl;
+        }
+     }
+
+
+
+
+   return 0;
+}
+
+
+
+
